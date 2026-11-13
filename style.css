@@ -425,14 +425,14 @@ main {
   transform: scale(1.03);
 }
 
-.card5::before { background-image: url("./card5.png"); }
-.card6::before { background-image: url("./card6.png"); }
-.card7::before { background-image: url("./card7.png"); }
-.card8::before { background-image: url("./card8.png"); }
-.card9_fav::before { background-image: url("./Sneakers.png"); }
-.card10_fav::before { background-image: url("./Leather Bag.png"); }
-.card11_fav::before { background-image: url("./Sweater.png"); }
-.card12_fav::before { background-image: url("./Loafers.png"); }
+.card5::before { background-image: url("./images/wool-overcoat.jpg"); }
+.card6::before { background-image: url("./images/chronograph-watch.jpg"); }
+.card7::before { background-image: url("./images/cotton-tee.jpg"); }
+.card8::before { background-image: url("./images/studio-headphones.jpg"); }
+.card9_fav::before { background-image: url("./images/white-sneakers.jpg"); }
+.card10_fav::before { background-image: url("./images/leather-tote.jpg"); }
+.card11_fav::before { background-image: url("./images/cashmere-sweater.jpg"); }
+.card12_fav::before { background-image: url("./images/penny-loafers.jpg"); }
 
 .div10, .div11, .div12, .div13, .div14, .div15, .div16, .div17 {
   padding: 18px 20px 4px 20px;
