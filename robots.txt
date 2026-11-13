@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atelier-store.vercel.app/sitemap.xml
+Sitemap: https://atelier-mu-gilt.vercel.app/sitemap.xml

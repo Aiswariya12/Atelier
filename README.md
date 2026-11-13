@@ -1,123 +1,82 @@
-# Atelier — Luxury E-Commerce Web Platform
+# Atelier — Minimalist Luxury Fashion & Accessories
 
-> Curated excellence, delivered. A responsive luxury fashion and lifestyle digital shopping experience built with pure vanilla HTML5, CSS3, and modern modular JavaScript.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-atelier--mu--gilt.vercel.app-2E3275?style=for-the-badge&logo=vercel&logoColor=white)](https://atelier-mu-gilt.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Vanilla JS](https://img.shields.io/badge/Vanilla_JS-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile_Friendly-059669?style=for-the-badge)](https://atelier-mu-gilt.vercel.app/)
 
----
-
-## 🌟 Live Features & Capabilities
-
-- **Catalog & Discovery (`AllProducts.html`)**:
-  - Live real-time search filtering.
-  - Interactive multi-criteria category filters (Outerwear, Accessories, Footwear, Apparel).
-  - Dynamic price range slider ($0 – $1,500) with live price counters.
-  - Star rating filter (4.8★ & above).
-  - Multi-option sorting (Featured, Price: Low-High, Price: High-Low, Highest Rated).
-  - Grid View & List View responsive toggle.
-  - Interactive wishlist heart toggle with persistent state.
-  - Quick Add to Bag from product cards with real-time toast feedback.
-
-- **Interactive Shopping Bag (`CartPage.html`)**:
-  - Centralized cart state synced via `localStorage` across all pages.
-  - Real-time quantity stepper (`+` and `−`) with custom circular controls.
-  - Instant item removal with fade transition.
-  - Dynamic subtotal, tax calculation (8.2%), and shipping logic.
-  - Empty bag state with one-click return to store.
-
-- **Seamless Checkout (`CheckoutPage.html`)**:
-  - Order summary synced directly with cart items.
-  - Interactive shipping address editor modal with auto-fill and live validation.
-  - Credit card auto-formatting: 4-digit card grouping, auto MM/YY slash formatting, 3-digit CVV mask.
-  - Dynamic payment methods (Credit Card accordion, Instant UPI QR Code, Digital Wallets).
-  - Branded Order Confirmation modal with unique Order ID and delivery tracking timeline.
-
-- **Authentication & Security (`LoginCard.html` & `RegisterPage.html`)**:
-  - Modern borderless inputs inside sleek containers.
-  - Password visibility toggle (eye icon).
-  - Real-time password strength meter (Length, Uppercase, Numbers, Symbols).
-  - Password match validation with interactive status cues.
-
-- **Universal Navigation & Responsiveness (`responsive-common.css`)**:
-  - Clean luxury typography (`Plus Jakarta Sans` & `Playfair Display`).
-  - Slide-out mobile navigation drawer with hamburger toggle.
-  - Global cart badge synced dynamically across all headers.
-  - Animated toast notification system for user actions.
-  - Dedicated luxury branded 404 page (`404.html`).
+> **Live Store:** [https://atelier-mu-gilt.vercel.app/](https://atelier-mu-gilt.vercel.app/)
 
 ---
 
-## 🚀 Quick Deployment Guide
+## 📖 About The Project
 
-This project is 100% static and requires no server-side build steps or database configuration. It can be deployed in under 2 minutes.
+**Atelier** is a front-end luxury fashion e-commerce web application built from the ground up using **pure vanilla HTML5, CSS3, and JavaScript**. 
 
-### Option 1: Deploy to Vercel (Recommended)
-1. Install Vercel CLI (or push to GitHub and import into vercel.com):
-   ```bash
-   npm install -g vercel
-   vercel
-   ```
-2. Follow the interactive prompts:
-   - **Set up and deploy?** [Y]
-   - **Which scope?** (Select your account)
-   - **Link to existing project?** [N]
-   - **Project name?** `atelier-luxury`
-   - **Directory?** `./`
-3. Your live production URL will be generated instantly (e.g., `https://atelier-luxury.vercel.app`).
-
-### Option 2: Deploy to Netlify
-#### Via Drag & Drop:
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop this entire project folder into the upload box.
-3. Your site is live immediately!
-
-#### Via Netlify CLI:
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir=.
-```
-
-### Option 3: Deploy to GitHub Pages
-1. Initialize a git repository and commit all files:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Atelier Luxury E-Commerce"
-   ```
-2. Create a new repository on GitHub (e.g. `atelier`).
-3. Push your repository:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/atelier.git
-   git push -u origin main
-   ```
-4. On GitHub, go to **Settings** > **Pages** > **Branch: main** > **Save**.
-5. Your store will be live at `https://<your-username>.github.io/atelier/`.
+The goal was to build a fast, elegant, and completely responsive shopping experience without relying on bulky front-end frameworks or external libraries. Every interaction—from dynamic category filtering and real-time search, to quantity steppers in the shopping bag and credit card auto-formatting at checkout—is written in clean, modular vanilla JavaScript.
 
 ---
 
-## 💻 Local Development
+## ✨ Features You Can Try
 
-To run and preview the project locally:
-```bash
-# Using Node / npx
-npx serve . -l 3000
+### 🛍️ 1. Product Catalog & Smart Filters (`AllProducts.html`)
+- **24 Unique Fashion Pieces**: Zero duplicate items. Each product has unique photography, descriptions, colorways, and realistic pricing across **Outerwear**, **Apparel**, **Footwear**, and **Accessories**.
+- **Instant Search**: Type any keyword in the search bar to filter products in real-time.
+- **Custom Price Slider**: Drag the interactive price range slider ($0 – $1,500) featuring a smooth two-tone track fill that follows your thumb.
+- **Rating Filter**: Check the **4.8★ & Up** filter (with gold vector stars) to view top-rated pieces.
+- **Grid vs. List View**: Toggle between a visual product card grid and a detailed editorial list layout.
+- **Quick Add & Wishlist**: Click the heart icon to save favorites or hit "Add to Cart" directly from any product card with instant toast notification feedback.
 
-# Or using VS Code Live Server
-# Right click index.html -> "Open with Live Server" (port 5500)
-```
+### 🛒 2. Dynamic Shopping Bag (`CartPage.html`)
+- **State Persistence**: Your cart is saved in `localStorage`, meaning items remain in your bag even when you close or refresh the tab.
+- **Quantity Controls**: Adjust item amounts with custom circular `+` and `−` steppers.
+- **Live Summary**: Real-time recalculation of subtotal, sales tax (8.2%), and free shipping.
+- **Empty State**: If you remove all items, an interactive empty-cart message appears with a direct button back to the collection.
+
+### 💳 3. Smooth Checkout Experience (`CheckoutPage.html`)
+- **Cart Sync**: Order totals and item counts automatically mirror your shopping bag.
+- **Interactive Address Editor**: Click "Change" on shipping details to open an address modal with validation and instant updates.
+- **Smart Card Inputs**:
+  - Automatically formats credit card numbers into clean 4-digit groups (`4532 •••• •••• 1234`).
+  - Auto-inserts the slash (`/`) when typing card expiry month and year (`MM/YY`).
+  - Formats 3-digit CVV codes.
+- **Order Placement**: Placing an order triggers a branded confirmation modal displaying your unique generated Order ID and estimated delivery timeline.
+
+### 🔐 4. Authentication Cards (`LoginCard.html` & `RegisterPage.html`)
+- **Seamless Modern Form Design**: Completely borderless inputs nested inside clean rounded containers.
+- **Password Eye Toggle**: Easily show or hide password characters with one click.
+- **Dynamic Password Strength Meter**: Evaluates length, uppercase letters, numbers, and symbols in real-time with color-coded visual indicator bars.
+- **Password Match Check**: Validates that password and confirm password fields match before allowing submission.
+
+### 📱 5. Responsive Design & Global UI (`responsive-common.css`)
+- **Slide-out Mobile Navigation**: Custom hamburger drawer menu for phones and tablets.
+- **Live Cart Badge**: Navbar shopping bag counter updates instantly across all open pages when items are added or removed.
+- **Animated Toast Alerts**: Clean notifications pop up at the bottom corner for cart updates, wishlist actions, and newsletter subscriptions.
+- **Branded 404 Page (`404.html`)**: Helpful error page that guides visitors back to the store.
 
 ---
 
-## 📁 Project Architecture
+## 🛠️ Built With
+
+- **HTML5**: Semantic markup, accessible labels, clean metadata.
+- **CSS3**: Modern layouts with CSS Grid & Flexbox, CSS custom properties (variables), subtle transitions, and media queries.
+- **Vanilla JavaScript (ES6+)**: Custom state management, modular script architecture, event delegation, and `localStorage` persistence.
+- **Google Fonts**: *Plus Jakarta Sans* (clean modern body) & *Playfair Display* (editorial luxury headers).
+- **Font Awesome 6**: Crisp, scalable vector icons used across buttons, inputs, steppers, and ratings.
+
+---
+
+## 📂 Project Structure
 
 ```
-Stitch/
-├── index.html              # Homepage & Curated Essentials
-├── AllProducts.html        # Product Catalog & Dynamic Filter Suite
-├── CartPage.html           # Interactive Shopping Bag
-├── CheckoutPage.html       # Checkout & Payment Experience
-├── LoginCard.html          # Authentication / Sign In Card
-├── RegisterPage.html       # New Member Registration
-├── 404.html                # Branded Luxury 404 Page
+Atelier/
+├── index.html              # Homepage with Hero, Categories & Seasonal Edit
+├── AllProducts.html        # Product Catalog with Search & Filter Suite
+├── CartPage.html           # Shopping Bag with Quantity Stepper & Order Summary
+├── CheckoutPage.html       # Checkout Flow with Card Formatting & Modals
+├── LoginCard.html          # Clean Member Sign In Form
+├── RegisterPage.html       # Account Registration with Password Strength Meter
+├── 404.html                # Branded 404 Not Found Page
 │
 ├── style.css               # Homepage Specific Styles
 ├── AllProducts.css         # Catalog Specific Styles
@@ -125,26 +84,55 @@ Stitch/
 ├── CheckoutPage.css        # Checkout Specific Styles
 ├── LoginCard.css           # Login Card Specific Styles
 ├── RegisterPage.css        # Register Card Specific Styles
-├── responsive-common.css   # Global Design System, Drawer, Modals, Resets
+├── responsive-common.css   # Global Design System, Drawer, Badges, Modals
 │
 ├── js/
-│   ├── store.js            # Centralized State Management, Catalog & Storage
-│   ├── main.js             # Mobile Drawer, Global Badges, Nav Highlighting
-│   ├── products.js         # Search, Filter, Sort, View Toggle
-│   ├── cart.js             # Bag Render, Quantity Stepper, Dynamic Summary
+│   ├── store.js            # Central State Management, Catalog & Storage
+│   ├── main.js             # Mobile Drawer, Cart Badge Sync, Nav Highlighting
+│   ├── products.js         # Search, Filter, Sort, View Toggle, Pagination
+│   ├── cart.js             # Cart Render, Stepper Actions, Dynamic Summary
 │   ├── checkout.js         # Address Modal, Card Formatting, Order Placement
-│   ├── auth.js             # Password Eye, Strength Meter, Form Validation
+│   ├── auth.js             # Password Visibility, Strength Meter, Validation
 │   └── home.js             # Hero Actions & Homepage Interactions
 │
-├── vercel.json             # Vercel Deployment Configuration & Headers
-├── netlify.toml            # Netlify Deployment Configuration & Headers
-├── package.json            # Node Configuration & Preview Scripts
-├── robots.txt              # Search Engine Crawler Directives
+├── images/                 # 24 High-Resolution Curated Fashion Product Images
+├── vercel.json             # Vercel Production Deployment Settings & Headers
+├── netlify.toml            # Netlify Deployment Configuration
 ├── sitemap.xml             # Search Engine Sitemap
-└── .gitignore              # Git Ignore Rules
+├── robots.txt              # Search Engine Crawler Directives
+└── package.json            # Project Metadata & Local Preview Scripts
 ```
 
 ---
 
+## 🚀 Running Locally
+
+No complicated setup or build tools required. You can run this project locally in two steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Aiswariya12/Atelier.git
+   cd Atelier
+   ```
+
+2. **Open the project:**
+   - Double-click `index.html` to open directly in any web browser.
+   - Or, if you use VS Code, right-click `index.html` and choose **Open with Live Server**.
+   - Or, using Node / npx:
+     ```bash
+     npx serve . -l 3000
+     ```
+
+---
+
+## 🌐 Live Deployment
+
+This repository is connected directly to **Vercel** with automatic continuous deployment on every push to `main`:
+
+👉 **[https://atelier-mu-gilt.vercel.app/](https://atelier-mu-gilt.vercel.app/)**
+
+---
+
 ## 📄 License
-This project is open-source under the [MIT License](LICENSE).
+
+This project is licensed under the [MIT License](LICENSE) — feel free to use it for learning, portfolios, or reference.

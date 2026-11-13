@@ -2,6 +2,11 @@
   "name": "atelier-luxury-ecommerce",
   "version": "1.0.0",
   "description": "Atelier — High-end minimalist luxury fashion and accessories e-commerce web platform.",
+  "homepage": "https://atelier-mu-gilt.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aiswariya12/Atelier.git"
+  },
   "main": "index.html",
   "scripts": {
     "start": "npx serve . -l 3000",
