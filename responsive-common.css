@@ -229,6 +229,68 @@ a.nav-link-active {
   content: none !important;
 }
 
+/* ==========================================================================
+   Universal High-Contrast Crisp Bright Arrows & Buttons
+   ========================================================================== */
+.inputt button {
+  padding: 10px 18px !important;
+  background: var(--primary) !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  cursor: pointer !important;
+  color: #FFFFFF !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(46, 50, 117, 0.25) !important;
+}
+
+.inputt button i,
+.inputt button svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease !important;
+}
+
+.inputt button:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 50, 117, 0.4) !important;
+}
+
+.inputt button:hover i {
+  transform: translateX(3px);
+}
+
+/* Pagination arrow */
+.lastminbox .one i {
+  color: var(--text-primary) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+/* Action button micro-interactions */
+button .fa-arrow-right,
+button .fa-arrow-left,
+a .fa-arrow-right,
+a .fa-arrow-left {
+  transition: transform 0.2s ease;
+}
+
+button:hover .fa-arrow-right,
+a:hover .fa-arrow-right {
+  transform: translateX(3px);
+}
+
+button:hover .fa-arrow-left,
+a:hover .fa-arrow-left {
+  transform: translateX(-3px);
+}
+
 /* Cart Icon Badge */
 .cart-icon-wrapper {
   position: relative;
