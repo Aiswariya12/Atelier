@@ -115,15 +115,25 @@ button:focus-visible, a:focus-visible, select:focus-visible {
   outline-offset: 2px;
 }
 
-/* Universal input reset: completely remove all inner borders, default browser outlines, and focus rings */
-input,
-input:focus,
-input:focus-visible,
-input:active {
+/* Universal input reset: completely remove all inner borders, default browser outlines, and focus rings on text-like inputs */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus-visible,
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):active {
   outline: none !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/* Checkbox and Radio appearance explicitly preserved */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: checkbox !important;
+  -moz-appearance: checkbox !important;
+  appearance: checkbox !important;
+  outline: none !important;
+  cursor: pointer;
 }
 
 /* Ensure placeholder texts never have any inner borders or outlines across all browsers */

@@ -67,20 +67,28 @@ function initProductCatalog() {
     priceSlider.value = '1500';
     maxPrice = 1500;
 
+    const updateSliderFill = () => {
+      const percent = (priceSlider.value / priceSlider.max) * 100;
+      priceSlider.style.background = `linear-gradient(to right, #2E3275 0%, #2E3275 ${percent}%, #E2E8F0 ${percent}%, #E2E8F0 100%)`;
+    };
+    updateSliderFill();
+
     // Price label indicator
     if (priceValueContainer) {
       priceValueContainer.innerHTML = `
         <span>$0</span>
-        <span class="active-max-price" style="font-weight: 700; color: #333697;">Up to $1,500</span>
+        <span class="active-max-price">All Prices ($1,500+)</span>
       `;
     }
 
     priceSlider.addEventListener('input', (e) => {
       maxPrice = Number(e.target.value);
+      updateSliderFill();
       const label = priceValueContainer ? priceValueContainer.querySelector('.active-max-price') : null;
       if (label) {
         label.textContent = maxPrice >= 1500 ? 'All Prices ($1,500+)' : `Up to $${maxPrice}`;
       }
+      currentPage = 1;
       render();
     });
   }
@@ -144,21 +152,31 @@ function initProductCatalog() {
   }
 
   // Setup Rating filter
-  if (ratingSection) {
-    ratingSection.style.cursor = 'pointer';
-    ratingSection.setAttribute('title', 'Filter by 4.8+ Stars');
-    ratingSection.addEventListener('click', () => {
-      if (minRating === 0) {
+  const ratingCheckbox = document.getElementById('rating-checkbox');
+  if (ratingCheckbox) {
+    ratingCheckbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
         minRating = 4.8;
-        ratingSection.style.opacity = '1';
-        ratingSection.style.outline = '2px solid #333697';
-        ratingSection.style.borderRadius = '6px';
-        ratingSection.style.padding = '4px 8px';
+        if (ratingSection) ratingSection.classList.add('active-filter');
         AtelierStore.showToast('Filtering: 4.8 Stars and up', 'info');
       } else {
         minRating = 0;
-        ratingSection.style.outline = 'none';
-        ratingSection.style.padding = '';
+        if (ratingSection) ratingSection.classList.remove('active-filter');
+        AtelierStore.showToast('Showing all ratings', 'info');
+      }
+      currentPage = 1;
+      render();
+    });
+  } else if (ratingSection) {
+    ratingSection.style.cursor = 'pointer';
+    ratingSection.addEventListener('click', () => {
+      if (minRating === 0) {
+        minRating = 4.8;
+        ratingSection.classList.add('active-filter');
+        AtelierStore.showToast('Filtering: 4.8 Stars and up', 'info');
+      } else {
+        minRating = 0;
+        ratingSection.classList.remove('active-filter');
         AtelierStore.showToast('Showing all ratings', 'info');
       }
       currentPage = 1;
