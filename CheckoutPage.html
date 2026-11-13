@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — Atelier</title>
+    <link rel="stylesheet" href="./CheckoutPage.css">
+    <link rel="stylesheet" href="./responsive-common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <nav>
+      <a href="./index.html" class="navlogo">Atelier</a>
+
+      <div class="list">
+        <ul>
+          <li><a href="./AllProducts.html?category=New">New Arrivals</a></li>
+          <li><a href="./AllProducts.html">Collection</a></li>
+          <li><a href="./AllProducts.html?category=Apparel">Men</a></li>
+          <li><a href="./AllProducts.html?category=Outerwear">Women</a></li>
+          <li><a href="./AllProducts.html?category=Sale">Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="icons">
+        <a href="./LoginCard.html" title="Account">
+          <img src="./Icon (1).png" alt="User Account">
+        </a>
+        <a href="./CartPage.html" class="cart-icon-wrapper" title="Shopping Bag">
+          <img src="./Icon (2).png" alt="Cart Bag">
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- CHECKOUT MAIN CONTENT -->
+    <main class="checkout-wrapper">
+      <!-- PROGRESS STEPPER -->
+      <div class="container">
+        <div class="circle3">
+          <div class="circle" title="Step 1: Shipping Address">
+            <img src="./right.png" alt="check">
+          </div>
+          <div class="circle2" title="Step 2: Payment Details">
+            <img src="./right1.png" alt="check">
+          </div>
+          <div class="circle5" title="Step 3: Review & Confirm">
+            <img src="./right2.png" alt="pending">
+          </div>
+          <hr class="h1">
+        </div>
+        <div class="para"> 
+          <p class="p1">Shipping</p>
+          <p class="p2">Payment</p>
+          <p class="p3">Review</p>
+        </div>
+      </div>
+
+      <!-- 2-COLUMN CHECKOUT GRID -->
+      <div class="checkout-grid">
+        <!-- LEFT COLUMN: Address & Payment Methods -->
+        <section class="checkout-left-col">
+          <!-- SSL Security Notice -->
+          <div class="section2">
+            <div class="sec">
+              <img src="./lock.png" alt="security lock">
+              <p>Your transaction is encrypted with 256-bit SSL security. Shop with absolute confidence.</p>
+            </div>
+          </div>
+
+          <!-- Shipping Address Card -->
+          <div class="section3">
+            <div class="sec1">
+              <div class="image1">
+                <i class="fa-solid fa-truck"></i>
+              </div>
+              <div class="box2">
+                <h3>Shipping Address</h3> 
+                <p>221B Baker St, London, NW1 6XE, United Kingdom</p>
+              </div>
+              <div class="box3" role="button" tabindex="0">Change</div>
+            </div> 
+          </div>
+
+          <!-- Payment Method Accordion -->
+          <div class="bigbox">
+            <div class="head">
+              <h2>Select Payment Method</h2>
+            </div>
+
+            <!-- Option 1: Credit / Debit Card -->
+            <div class="minibox">
+              <div class="di">
+                <div class="minibox1">
+                  <span><i class="fa-regular fa-credit-card"></i></span>
+                  <div class="hp">
+                    <h3>Credit or Debit Card</h3>
+                    <p>All major cards accepted globally</p>
+                  </div>
+                </div>
+
+                <div class="minibox2">
+                  <div class="visa">VISA</div>
+                  <div class="visa">MC</div>
+                </div>
+              </div>
+
+              <div>
+                <div class="input">
+                  <h5>Card Number</h5>
+                  <input type="text" placeholder="xxxx xxxx xxxx xxxx">
+                </div>
+
+                <div class="input10">
+                  <div class="input100">
+                    <h5>Expiry Date</h5>
+                    <input type="text" placeholder="MM/YY">
+                  </div>
+
+                  <div class="input100">
+                    <h5>CVV</h5>
+                    <input type="password" placeholder="123">
+                  </div>
+                </div>
+                
+                <div class="check">
+                  <input type="checkbox" id="save-card-check" checked>
+                  <label for="save-card-check" style="margin: 0; cursor: pointer;">Save card details for faster checkout</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Option 2: UPI / QR Code -->
+            <div class="section4">
+              <div class="code">
+                <span><i class="fa-solid fa-qrcode"></i></span>
+                <p>UPI / Instant QR Code</p>
+                <span class="ss"><i class="fa-solid fa-angle-down"></i></span>
+              </div>
+            </div>
+
+            <!-- Option 3: Digital Wallets -->
+            <div class="section5">
+              <div class="codee">
+                <img src="./wallet.png" alt="wallet">
+                <div class="sss">Digital Wallets (Apple Pay, PayPal)</div>
+                <span class="ssss"><i class="fa-solid fa-angle-down"></i></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Order Summary -->
+        <aside class="checkout-right-col" aria-label="Order Summary">
+          <div class="rightdiv">
+            <div class="summary">
+              <h3>Order Summary</h3>
+            </div>
+
+            <!-- Items injected by checkout.js -->
+            <hr class="h22">
+
+            <div class="row1">
+              <span>Subtotal</span>
+              <span class="a">$0.00</span>
+            </div> 
+
+            <div class="row">
+              <span>Shipping</span>
+              <span class="a1">Free</span>
+            </div>
+
+            <div class="row">
+              <span>Estimated Tax (8.2%)</span>
+              <span class="a">$0.00</span>
+            </div>
+          
+            <div class="row2">
+              <div class="s">Total Amount</div>
+              <div class="p">$0.00</div>
+            </div>
+
+            <button class="checkout">Confirm Payment</button>
+
+            <div class="para100">
+              <span><img src="./suchi.png" alt="badge 1"></span>
+              <span><img src="./suchi1.png" alt="badge 2"></span>
+              <span><img src="./suchi2.png" alt="badge 3"></span>
+            </div>
+
+            <div class="hii">
+              By clicking "Confirm Payment", you agree to Atelier's <br>
+              <u>Terms of Service</u> and <u>Privacy Policy</u>.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerdiv1">
+          <h5>Atelier</h5>
+          <p>Curating timeless pieces for the digital age. Quality over quantity, always.</p>
+        </div>
+
+        <div class="footerdiv2">
+          <h5>Customer Care</h5> 
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </div>
+
+        <div class="footerdiv3">
+          <h5>LEGAL</h5> 
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </div>
+
+        <div class="footerdiv4">
+          <h5>Newsletter</h5>
+          <div class="inputt">
+            <input type="email" placeholder="email@example.com">
+            <button aria-label="Subscribe"><img src="./checkout icon3.png" alt="arrow"></button>
+          </div> 
+        </div>  
+      </div>
+      
+      <hr class="lasthr">
+      <div class="last">
+        <span>© 2024 The Digital Atelier. All rights reserved.</span>
+        <div class="iconsss">
+          <span><img src="./checkout icon1.png" alt="social 1"></span>
+          <span><img src="./checkout icon2.png" alt="social 2"></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/store.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+</html>

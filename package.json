@@ -1,0 +1,22 @@
+{
+  "name": "atelier-luxury-ecommerce",
+  "version": "1.0.0",
+  "description": "Atelier — High-end minimalist luxury fashion and accessories e-commerce web platform.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 5500",
+    "build": "echo \"Static build ready!\""
+  },
+  "keywords": [
+    "ecommerce",
+    "fashion",
+    "atelier",
+    "luxury",
+    "minimalist",
+    "responsive",
+    "javascript"
+  ],
+  "author": "Atelier Design Team",
+  "license": "MIT"
+}

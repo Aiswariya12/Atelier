@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — Atelier</title>
+    <link rel="stylesheet" href="./RegisterPage.css">
+    <link rel="stylesheet" href="./responsive-common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <nav>
+      <a href="./index.html" class="navlogo">Atelier</a>
+
+      <div class="list">
+        <ul>
+          <li><a href="./AllProducts.html?category=New">New Arrivals</a></li>
+          <li><a href="./AllProducts.html">Collection</a></li>
+          <li><a href="./AllProducts.html?category=Apparel">Men</a></li>
+          <li><a href="./AllProducts.html?category=Outerwear">Women</a></li>
+          <li><a href="./AllProducts.html?category=Sale">Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="icons">
+        <a href="./LoginCard.html" title="Account">
+          <img src="./Icon (1).png" alt="User Account">
+        </a>
+        <a href="./CartPage.html" class="cart-icon-wrapper" title="Shopping Bag">
+          <img src="./Icon (2).png" alt="Cart Bag">
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- MAIN REGISTRATION CARD -->
+    <main class="section1">
+      <div class="maindiv">
+        <!-- LEFT: BRAND BANNER -->
+        <div class="left">
+          <h2>Join the Atelier.</h2>
+          <div class="paara">
+            <p>Unlock exclusive access to curated seasonal drops,</p>
+            <p>private gallery viewings, and bespoke tailoring</p>
+            <p>services.</p>
+          </div>
+        </div> 
+
+        <!-- RIGHT: FORM -->
+        <div class="right">
+          <h1>Create Account</h1>
+          <p>Enter your details to begin your journey.</p>
+
+          <form id="register-form">
+            <div class="one">
+              <h5>FULL NAME</h5>
+              <input type="text" placeholder="Alexander McQueen" required autocomplete="name">
+            </div>
+
+            <div class="two">
+              <h5>EMAIL ADDRESS</h5>
+              <input type="email" placeholder="alexander@atelier.com" required autocomplete="email">
+            </div>
+
+            <div class="three">
+              <div class="box">
+                <h5>PASSWORD</h5>
+                <input type="password" placeholder="••••••••••" required autocomplete="new-password">
+              </div>
+
+              <div class="box">
+                <h5>CONFIRM</h5>
+                <input type="password" placeholder="••••••••••" required autocomplete="new-password">
+              </div>
+            </div>
+
+            <div class="box1">
+              <h5>Password Strength</h5>
+              <span class="bar3">None</span>
+            </div>
+
+            <div class="boxx">
+              <div class="bar">
+                <div class="d1"></div>
+                <div class="d1"></div>
+                <div class="d1"></div>
+              </div>
+            </div>
+
+            <div class="checkboxx">
+              <input type="checkbox" id="terms-agree" required>
+              <label for="terms-agree" style="margin: 0; cursor: pointer;">
+                I agree to the <a href="#" class="condition">Terms of Service</a> and <a href="#" class="condition">Privacy Policy</a>
+              </label>
+            </div>
+            
+            <button type="submit">CREATE ACCOUNT</button>
+
+            <p class="text">Already have an account? 
+              <a href="./LoginCard.html" class="condition">Log In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerdiv1">
+          <h3>Atelier</h3>
+          <p>Curating the finest in modern lifestyle and architectural apparel. Join our mailing list for early access to drops.</p>
+        </div>
+
+        <div class="footerdiv2">
+          <h4>Customer Care</h4>
+          <li>Shipping Info</li>
+          <li>Returns</li>
+          <li>Contact Us</li>
+        </div>
+
+        <div class="footerdiv3">
+          <h4>Legal</h4>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+        </div>
+
+        <div class="footerdiv4">
+          <h4>About Atelier</h4>
+          <p style="color: #697489; font-size: 14px; line-height: 1.6;">
+            A bespoke atelier creating timeless minimal wardrobe collections with ethical longevity.
+          </p>
+        </div>
+      </div>
+
+      <hr class="lasthr">
+      <div class="last">
+        © 2024 The Digital Atelier. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/store.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,843 @@
+/* ==========================================================================
+   Atelier - Premium Design System & Common Responsive Components
+   Includes Google Fonts, refined luxury palette, toast system, modals, mobile drawer.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Luxury Brand Colors */
+  --primary: #2E3275;
+  --primary-hover: #222557;
+  --primary-light: #EEF1FA;
+  --primary-glow: rgba(46, 50, 117, 0.15);
+  --secondary: #12142B;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+
+  --bg-page: #F8FAFD;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+
+  --border-color: #E2E8F0;
+  --border-subtle: #EDF2F7;
+  
+  --success: #059669;
+  --success-bg: #ECFDF5;
+  --danger: #DC2626;
+  --danger-bg: #FEF2F2;
+  --warning: #D97706;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-primary: 0 8px 20px rgba(46, 50, 117, 0.25);
+
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Elegant Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Common Links & Buttons */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Accessible focus outline (for buttons, links, selects only) */
+button:focus-visible, a:focus-visible, select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Universal input reset: completely remove all inner borders, default browser outlines, and focus rings */
+input,
+input:focus,
+input:focus-visible,
+input:active {
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Ensure placeholder texts never have any inner borders or outlines across all browsers */
+input::placeholder {
+  border: none !important;
+  outline: none !important;
+  user-select: none;
+}
+
+/* Ensure any input placed inside a styled container (search, auth cards, pills, drawers) is seamless with 0 inner borders */
+.searchbox input,
+.search input,
+.mobile-search input,
+.one input,
+.one1 input {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.searchbox input:focus,
+.searchbox input:focus-visible,
+.searchbox input:active,
+.search input:focus,
+.search input:focus-visible,
+.search input:active,
+.mobile-search input:focus,
+.mobile-search input:focus-visible,
+.mobile-search input:active,
+.one input:focus,
+.one input:focus-visible,
+.one input:active,
+.one1 input:focus,
+.one1 input:focus-visible,
+.one1 input:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   Navigation Bar Enhancements
+   ========================================================================== */
+nav {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+}
+
+.navlogo, .leftnav {
+  font-family: var(--font-serif) !important;
+  font-size: 27px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  color: var(--primary) !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  user-select: none;
+}
+
+.list > ul li a, .list > ul li {
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  letter-spacing: 0.2px;
+  padding: 6px 0;
+  position: relative;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: color 0.2s ease;
+}
+
+.list > ul li a:hover, .list > ul li:hover,
+.nav-link-active,
+a.nav-link-active {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.nav-link-active::after,
+.list > ul li a::after,
+.list > ul li::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Cart Icon Badge */
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(46, 50, 117, 0.4);
+  pointer-events: none;
+  line-height: 1;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-badge.pop {
+  transform: scale(1.3);
+}
+
+/* Mobile Hamburger Button */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1002;
+  margin-left: 8px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s;
+}
+
+.hamburger-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Mobile Navigation Drawer & Overlay
+   ========================================================================== */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 320px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #FFFFFF;
+  box-shadow: var(--shadow-lg);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.mobile-drawer-logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.mobile-drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-drawer-close:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.mobile-search {
+  display: flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.mobile-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: auto;
+}
+
+.mobile-nav-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-links li a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.mobile-drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.mobile-drawer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.mobile-drawer-btn.primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-primary);
+}
+
+.mobile-drawer-btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.mobile-drawer-btn.outline {
+  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+  color: var(--text-primary);
+}
+
+.mobile-drawer-btn.outline:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================== */
+.atelier-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  max-width: 90vw;
+  width: 380px;
+}
+
+.atelier-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  color: var(--text-primary);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.3s, transform 0.3s;
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.atelier-toast.hiding {
+  opacity: 0;
+  transform: translateY(15px) scale(0.95);
+}
+
+.atelier-toast-success {
+  border-left-color: var(--success);
+}
+.atelier-toast-success .toast-icon {
+  color: var(--success);
+}
+
+.atelier-toast-error {
+  border-left-color: var(--danger);
+}
+.atelier-toast-error .toast-icon {
+  color: var(--danger);
+}
+
+.atelier-toast-info {
+  border-left-color: var(--primary);
+}
+.atelier-toast-info .toast-icon {
+  color: var(--primary);
+}
+
+.toast-icon {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.toast-text {
+  flex-grow: 1;
+  line-height: 1.45;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.toast-close:hover {
+  color: var(--text-primary);
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Modals (Shipping Address Modal, Order Confirmation)
+   ========================================================================== */
+.atelier-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.atelier-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.atelier-modal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.3);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px 32px;
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.atelier-modal-overlay.open .atelier-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.atelier-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.atelier-modal-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.atelier-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.atelier-modal-close:hover {
+  color: var(--text-primary);
+}
+
+.atelier-modal-body {
+  margin-bottom: 24px;
+}
+
+.atelier-form-group {
+  margin-bottom: 18px;
+}
+
+.atelier-form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.atelier-form-group input, 
+.atelier-form-group select, 
+.atelier-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  background: #FAFAFA;
+}
+
+.atelier-form-group input:focus,
+.atelier-form-group select:focus {
+  border-color: var(--primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.atelier-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.atelier-form-row .atelier-form-group {
+  flex: 1;
+}
+
+.atelier-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.atelier-btn-secondary {
+  padding: 12px 22px;
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.atelier-btn-secondary:hover {
+  background: #E2E8F0;
+}
+
+.atelier-btn-primary {
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-primary);
+}
+
+.atelier-btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* Order Success Modal Styling */
+.order-success-content {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.order-success-icon {
+  width: 76px;
+  height: 76px;
+  background: var(--success-bg);
+  color: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 0 0 10px rgba(16, 185, 129, 0.12);
+}
+
+.order-success-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.order-success-lead {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin-bottom: 24px;
+  line-height: 1.55;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order-details-box {
+  background: var(--primary-light);
+  border: 1px solid #D8DFF5;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.order-detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.order-detail-item:last-child {
+  margin-bottom: 0;
+  padding-top: 12px;
+  border-top: 1px dashed #CBD5E1;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for Common Elements
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  nav .list {
+    display: none !important;
+  }
+
+  nav .searchbox {
+    display: none !important;
+  }
+
+  nav {
+    justify-content: space-between !important;
+    padding: 0 24px !important;
+  }
+
+  .navlogo, .leftnav {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  nav .rightnav {
+    width: auto !important;
+    background: transparent !important;
+  }
+
+  nav .icons {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 20px !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0 16px !important;
+    height: 64px !important;
+  }
+
+  .navlogo, .leftnav {
+    font-size: 22px !important;
+  }
+
+  .atelier-toast-container {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  .atelier-modal-card {
+    padding: 24px 20px;
+  }
+}
