@@ -55,7 +55,11 @@ function initHomePage() {
     { cardSelector: '.card5', id: 'prod-1', name: 'Structured Wool Coat' },
     { cardSelector: '.card6', id: 'prod-7', name: 'Elysian Timepiece' },
     { cardSelector: '.card7', id: 'prod-8', name: 'Essential Pima Tee' },
-    { cardSelector: '.card8', id: 'prod-9', name: 'Studio HD-20 Headphones' }
+    { cardSelector: '.card8', id: 'prod-9', name: 'Studio HD-20 Headphones' },
+    { cardSelector: '.card9_fav', id: 'prod-3', name: 'Atelier Baseline Sneaker' },
+    { cardSelector: '.card10_fav', id: 'prod-2', name: 'Veau Epsom Messenger' },
+    { cardSelector: '.card11_fav', id: 'prod-4', name: 'Pure Cashmere Knit' },
+    { cardSelector: '.card12_fav', id: 'prod-6', name: 'Polished Leather Loafers' }
   ];
 
   favorites.forEach(fav => {

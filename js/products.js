@@ -242,7 +242,14 @@ function initProductCatalog() {
 
     // Filter by Category
     if (activeCategory && activeCategory !== 'All' && !activeCategory.includes('All')) {
-      list = list.filter(p => p.category.toLowerCase().includes(activeCategory.toLowerCase()));
+      const catLower = activeCategory.toLowerCase();
+      if (catLower === 'new' || catLower.includes('arrival')) {
+        list = list.filter(p => p.isNew === true);
+      } else if (catLower === 'sale') {
+        list = list.filter(p => p.originalPrice !== null && p.originalPrice > p.price);
+      } else {
+        list = list.filter(p => p.category.toLowerCase().includes(catLower));
+      }
     }
 
     // Filter by Search

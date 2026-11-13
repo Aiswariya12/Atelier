@@ -386,7 +386,8 @@ main {
   gap: 26px;
 }
 
-.card5, .card6, .card7, .card8 {
+.card5, .card6, .card7, .card8,
+.card9_fav, .card10_fav, .card11_fav, .card12_fav {
   background-color: #FFFFFF;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
@@ -397,14 +398,16 @@ main {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.card5:hover, .card6:hover, .card7:hover, .card8:hover {
+.card5:hover, .card6:hover, .card7:hover, .card8:hover,
+.card9_fav:hover, .card10_fav:hover, .card11_fav:hover, .card12_fav:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
   border-color: #CBD5E1;
 }
 
 /* Product Photo Box */
-.card5::before, .card6::before, .card7::before, .card8::before {
+.card5::before, .card6::before, .card7::before, .card8::before,
+.card9_fav::before, .card10_fav::before, .card11_fav::before, .card12_fav::before {
   content: '';
   display: block;
   width: 100%;
@@ -417,7 +420,8 @@ main {
   transition: transform 0.35s ease;
 }
 
-.card5:hover::before, .card6:hover::before, .card7:hover::before, .card8:hover::before {
+.card5:hover::before, .card6:hover::before, .card7:hover::before, .card8:hover::before,
+.card9_fav:hover::before, .card10_fav:hover::before, .card11_fav:hover::before, .card12_fav:hover::before {
   transform: scale(1.03);
 }
 
@@ -425,8 +429,12 @@ main {
 .card6::before { background-image: url("./card6.png"); }
 .card7::before { background-image: url("./card7.png"); }
 .card8::before { background-image: url("./card8.png"); }
+.card9_fav::before { background-image: url("./Sneakers.png"); }
+.card10_fav::before { background-image: url("./Leather Bag.png"); }
+.card11_fav::before { background-image: url("./Sweater.png"); }
+.card12_fav::before { background-image: url("./Loafers.png"); }
 
-.div10, .div11, .div12, .div13 {
+.div10, .div11, .div12, .div13, .div14, .div15, .div16, .div17 {
   padding: 18px 20px 4px 20px;
   font-size: 16.5px;
   font-weight: 700;
@@ -436,7 +444,7 @@ main {
   gap: 12px;
 }
 
-.chinu, .chinu1, .chinu2, .chinu3 {
+.chinu, .chinu1, .chinu2, .chinu3, .chinu4, .chinu5, .chinu6, .chinu7 {
   font-size: 17px;
   font-weight: 800;
   color: var(--primary);
@@ -472,7 +480,7 @@ main {
 }
 
 /* Buy Action Row */
-.don, .don2, .don3, .don4 {
+.don, .don2, .don3, .don4, .don5, .don6, .don7, .don8 {
   padding: 0 20px 20px 20px;
   margin-top: auto;
   display: flex;
@@ -480,7 +488,8 @@ main {
   gap: 10px;
 }
 
-.don button, .don2 button, .don3 button, .don4 button {
+.don button, .don2 button, .don3 button, .don4 button,
+.don5 button, .don6 button, .don7 button, .don8 button {
   flex-grow: 1;
   height: 46px;
   background-color: var(--primary);
@@ -494,7 +503,8 @@ main {
   box-shadow: 0 2px 8px rgba(46, 50, 117, 0.2);
 }
 
-.don button:hover, .don2 button:hover, .don3 button:hover, .don4 button:hover {
+.don button:hover, .don2 button:hover, .don3 button:hover, .don4 button:hover,
+.don5 button:hover, .don6 button:hover, .don7 button:hover, .don8 button:hover {
   background-color: var(--primary-hover);
 }
 
